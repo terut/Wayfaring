@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC5005191B2AAD5B0067FD2F /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC5005111B2AACD30067FD2F /* Nimble.framework */; };
+		EC50051A1B2AAD6B0067FD2F /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC5005131B2AACDE0067FD2F /* Quick.framework */; };
 		EC6649F31B2A731C007530D3 /* Wayfaring.h in Headers */ = {isa = PBXBuildFile; fileRef = EC6649F21B2A731C007530D3 /* Wayfaring.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EC6649F91B2A731C007530D3 /* Wayfaring.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC6649ED1B2A731C007530D3 /* Wayfaring.framework */; };
-		EC664A001B2A731C007530D3 /* WayfaringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6649FF1B2A731C007530D3 /* WayfaringTests.swift */; };
+		EC664A001B2A731C007530D3 /* WayfaringSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6649FF1B2A731C007530D3 /* WayfaringSpec.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,12 +25,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EC5005111B2AACD30067FD2F /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		EC5005131B2AACDE0067FD2F /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		EC6649ED1B2A731C007530D3 /* Wayfaring.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Wayfaring.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC6649F11B2A731C007530D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC6649F21B2A731C007530D3 /* Wayfaring.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Wayfaring.h; sourceTree = "<group>"; };
 		EC6649F81B2A731C007530D3 /* WayfaringTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WayfaringTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC6649FE1B2A731C007530D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EC6649FF1B2A731C007530D3 /* WayfaringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WayfaringTests.swift; sourceTree = "<group>"; };
+		EC6649FF1B2A731C007530D3 /* WayfaringSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WayfaringSpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +47,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC50051A1B2AAD6B0067FD2F /* Quick.framework in Frameworks */,
+				EC5005191B2AAD5B0067FD2F /* Nimble.framework in Frameworks */,
 				EC6649F91B2A731C007530D3 /* Wayfaring.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -50,11 +56,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EC5005161B2AAD180067FD2F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EC5005131B2AACDE0067FD2F /* Quick.framework */,
+				EC5005111B2AACD30067FD2F /* Nimble.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		EC6649E31B2A731C007530D3 = {
 			isa = PBXGroup;
 			children = (
 				EC6649EF1B2A731C007530D3 /* Wayfaring */,
 				EC6649FC1B2A731C007530D3 /* WayfaringTests */,
+				EC5005161B2AAD180067FD2F /* Frameworks */,
 				EC6649EE1B2A731C007530D3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -88,7 +104,7 @@
 		EC6649FC1B2A731C007530D3 /* WayfaringTests */ = {
 			isa = PBXGroup;
 			children = (
-				EC6649FF1B2A731C007530D3 /* WayfaringTests.swift */,
+				EC6649FF1B2A731C007530D3 /* WayfaringSpec.swift */,
 				EC6649FD1B2A731C007530D3 /* Supporting Files */,
 			);
 			path = WayfaringTests;
@@ -141,6 +157,7 @@
 				EC6649F41B2A731C007530D3 /* Sources */,
 				EC6649F51B2A731C007530D3 /* Frameworks */,
 				EC6649F61B2A731C007530D3 /* Resources */,
+				EC50051D1B2AAF0D0067FD2F /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -204,6 +221,24 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		EC50051D1B2AAF0D0067FD2F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Quick.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Nimble.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		EC6649E81B2A731C007530D3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -216,7 +251,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC664A001B2A731C007530D3 /* WayfaringTests.swift in Sources */,
+				EC664A001B2A731C007530D3 /* WayfaringSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,7 +303,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -310,7 +345,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -356,6 +391,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -373,6 +409,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = WayfaringTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -399,6 +436,7 @@
 				EC664A051B2A731C007530D3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EC664A061B2A731C007530D3 /* Build configuration list for PBXNativeTarget "WayfaringTests" */ = {
 			isa = XCConfigurationList;
@@ -407,6 +445,7 @@
 				EC664A081B2A731C007530D3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
