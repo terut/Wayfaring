@@ -1,0 +1,414 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EC6649F31B2A731C007530D3 /* Wayfaring.h in Headers */ = {isa = PBXBuildFile; fileRef = EC6649F21B2A731C007530D3 /* Wayfaring.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EC6649F91B2A731C007530D3 /* Wayfaring.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC6649ED1B2A731C007530D3 /* Wayfaring.framework */; };
+		EC664A001B2A731C007530D3 /* WayfaringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6649FF1B2A731C007530D3 /* WayfaringTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EC6649FA1B2A731C007530D3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC6649E41B2A731C007530D3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EC6649EC1B2A731C007530D3;
+			remoteInfo = Wayfaring;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EC6649ED1B2A731C007530D3 /* Wayfaring.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Wayfaring.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC6649F11B2A731C007530D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC6649F21B2A731C007530D3 /* Wayfaring.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Wayfaring.h; sourceTree = "<group>"; };
+		EC6649F81B2A731C007530D3 /* WayfaringTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WayfaringTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC6649FE1B2A731C007530D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC6649FF1B2A731C007530D3 /* WayfaringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WayfaringTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EC6649E91B2A731C007530D3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC6649F51B2A731C007530D3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC6649F91B2A731C007530D3 /* Wayfaring.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EC6649E31B2A731C007530D3 = {
+			isa = PBXGroup;
+			children = (
+				EC6649EF1B2A731C007530D3 /* Wayfaring */,
+				EC6649FC1B2A731C007530D3 /* WayfaringTests */,
+				EC6649EE1B2A731C007530D3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EC6649EE1B2A731C007530D3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EC6649ED1B2A731C007530D3 /* Wayfaring.framework */,
+				EC6649F81B2A731C007530D3 /* WayfaringTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EC6649EF1B2A731C007530D3 /* Wayfaring */ = {
+			isa = PBXGroup;
+			children = (
+				EC6649F21B2A731C007530D3 /* Wayfaring.h */,
+				EC6649F01B2A731C007530D3 /* Supporting Files */,
+			);
+			path = Wayfaring;
+			sourceTree = "<group>";
+		};
+		EC6649F01B2A731C007530D3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EC6649F11B2A731C007530D3 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EC6649FC1B2A731C007530D3 /* WayfaringTests */ = {
+			isa = PBXGroup;
+			children = (
+				EC6649FF1B2A731C007530D3 /* WayfaringTests.swift */,
+				EC6649FD1B2A731C007530D3 /* Supporting Files */,
+			);
+			path = WayfaringTests;
+			sourceTree = "<group>";
+		};
+		EC6649FD1B2A731C007530D3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EC6649FE1B2A731C007530D3 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		EC6649EA1B2A731C007530D3 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC6649F31B2A731C007530D3 /* Wayfaring.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		EC6649EC1B2A731C007530D3 /* Wayfaring */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC664A031B2A731C007530D3 /* Build configuration list for PBXNativeTarget "Wayfaring" */;
+			buildPhases = (
+				EC6649E81B2A731C007530D3 /* Sources */,
+				EC6649E91B2A731C007530D3 /* Frameworks */,
+				EC6649EA1B2A731C007530D3 /* Headers */,
+				EC6649EB1B2A731C007530D3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Wayfaring;
+			productName = Wayfaring;
+			productReference = EC6649ED1B2A731C007530D3 /* Wayfaring.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		EC6649F71B2A731C007530D3 /* WayfaringTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC664A061B2A731C007530D3 /* Build configuration list for PBXNativeTarget "WayfaringTests" */;
+			buildPhases = (
+				EC6649F41B2A731C007530D3 /* Sources */,
+				EC6649F51B2A731C007530D3 /* Frameworks */,
+				EC6649F61B2A731C007530D3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EC6649FB1B2A731C007530D3 /* PBXTargetDependency */,
+			);
+			name = WayfaringTests;
+			productName = WayfaringTests;
+			productReference = EC6649F81B2A731C007530D3 /* WayfaringTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EC6649E41B2A731C007530D3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = terut;
+				TargetAttributes = {
+					EC6649EC1B2A731C007530D3 = {
+						CreatedOnToolsVersion = 6.3.2;
+					};
+					EC6649F71B2A731C007530D3 = {
+						CreatedOnToolsVersion = 6.3.2;
+					};
+				};
+			};
+			buildConfigurationList = EC6649E71B2A731C007530D3 /* Build configuration list for PBXProject "Wayfaring" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = EC6649E31B2A731C007530D3;
+			productRefGroup = EC6649EE1B2A731C007530D3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EC6649EC1B2A731C007530D3 /* Wayfaring */,
+				EC6649F71B2A731C007530D3 /* WayfaringTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EC6649EB1B2A731C007530D3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC6649F61B2A731C007530D3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EC6649E81B2A731C007530D3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC6649F41B2A731C007530D3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC664A001B2A731C007530D3 /* WayfaringTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EC6649FB1B2A731C007530D3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EC6649EC1B2A731C007530D3 /* Wayfaring */;
+			targetProxy = EC6649FA1B2A731C007530D3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		EC664A011B2A731C007530D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		EC664A021B2A731C007530D3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		EC664A041B2A731C007530D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Wayfaring/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		EC664A051B2A731C007530D3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Wayfaring/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		EC664A071B2A731C007530D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = WayfaringTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		EC664A081B2A731C007530D3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = WayfaringTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EC6649E71B2A731C007530D3 /* Build configuration list for PBXProject "Wayfaring" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC664A011B2A731C007530D3 /* Debug */,
+				EC664A021B2A731C007530D3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC664A031B2A731C007530D3 /* Build configuration list for PBXNativeTarget "Wayfaring" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC664A041B2A731C007530D3 /* Debug */,
+				EC664A051B2A731C007530D3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		EC664A061B2A731C007530D3 /* Build configuration list for PBXNativeTarget "WayfaringTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC664A071B2A731C007530D3 /* Debug */,
+				EC664A081B2A731C007530D3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EC6649E41B2A731C007530D3 /* Project object */;
+}
