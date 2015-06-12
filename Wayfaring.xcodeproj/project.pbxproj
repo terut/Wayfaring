@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD5E87481B2AB7E300C5161B /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5E87471B2AB7E300C5161B /* Route.swift */; };
+		CD5E874A1B2ACD7E00C5161B /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5E87491B2ACD7E00C5161B /* Routes.swift */; };
+		CD5E874C1B2ACF6800C5161B /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5E874B1B2ACF6800C5161B /* Resource.swift */; };
+		EC38306C1B2B068400780BC4 /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC38306B1B2B068400780BC4 /* Regex.swift */; };
 		EC5005191B2AAD5B0067FD2F /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC5005111B2AACD30067FD2F /* Nimble.framework */; };
 		EC50051A1B2AAD6B0067FD2F /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC5005131B2AACDE0067FD2F /* Quick.framework */; };
 		EC6649F31B2A731C007530D3 /* Wayfaring.h in Headers */ = {isa = PBXBuildFile; fileRef = EC6649F21B2A731C007530D3 /* Wayfaring.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -25,6 +29,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CD5E87471B2AB7E300C5161B /* Route.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		CD5E87491B2ACD7E00C5161B /* Routes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Routes.swift; sourceTree = "<group>"; };
+		CD5E874B1B2ACF6800C5161B /* Resource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
+		EC38306B1B2B068400780BC4 /* Regex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Regex.swift; sourceTree = "<group>"; };
 		EC5005111B2AACD30067FD2F /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		EC5005131B2AACDE0067FD2F /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		EC6649ED1B2A731C007530D3 /* Wayfaring.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Wayfaring.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,6 +96,10 @@
 			isa = PBXGroup;
 			children = (
 				EC6649F21B2A731C007530D3 /* Wayfaring.h */,
+				CD5E874B1B2ACF6800C5161B /* Resource.swift */,
+				CD5E87471B2AB7E300C5161B /* Route.swift */,
+				CD5E87491B2ACD7E00C5161B /* Routes.swift */,
+				EC38306B1B2B068400780BC4 /* Regex.swift */,
 				EC6649F01B2A731C007530D3 /* Supporting Files */,
 			);
 			path = Wayfaring;
@@ -244,6 +256,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD5E874C1B2ACF6800C5161B /* Resource.swift in Sources */,
+				EC38306C1B2B068400780BC4 /* Regex.swift in Sources */,
+				CD5E87481B2AB7E300C5161B /* Route.swift in Sources */,
+				CD5E874A1B2ACD7E00C5161B /* Routes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,6 +374,7 @@
 		EC664A041B2A731C007530D3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -367,12 +384,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		EC664A051B2A731C007530D3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
