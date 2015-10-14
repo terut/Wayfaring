@@ -26,7 +26,7 @@ public class Routes {
                 if route.keys.count > 0 {
                     var params = [String: AnyObject]()
                     var values = Regex.capture(path, pattern: route.pattern)
-                    for (i, key) in enumerate(route.keys) {
+                    for (i, key) in route.keys.enumerate() {
                         params[key] = values[i]
                     }
                     for (key, val) in paramsFromQueryString(url) {
@@ -55,7 +55,7 @@ public class Routes {
         let components = NSURLComponents(URL: url, resolvingAgainstBaseURL: true)
         if let items = components?.queryItems {
             for item in items {
-                let i = item as! NSURLQueryItem
+                let i = item 
                 if let v = i.value {
                     params[i.name] = v
                 } else {

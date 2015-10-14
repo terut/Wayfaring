@@ -22,8 +22,6 @@ enum AppResource: Resource {
             return "/first"
         case .Second:
             return "/second/:second_id"
-        default:
-            return ""
         }
     }
 

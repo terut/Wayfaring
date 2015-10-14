@@ -20,7 +20,7 @@ public struct Route {
     }
 
     internal func isMatch(path: String) -> Bool {
-        if let match = path.rangeOfString(self.pattern, options: .RegularExpressionSearch) {
+        if let _ = path.rangeOfString(self.pattern, options: .RegularExpressionSearch) {
             return true
         }
         return false
@@ -28,8 +28,8 @@ public struct Route {
 
     private func compile(path: String) -> (pattern: String, keys: [String]) {
         let corePattern = path.stringByReplacingOccurrencesOfString(":[^/?#]+", withString: "([^/?#]+)", options: NSStringCompareOptions.RegularExpressionSearch, range: nil)
-        var pattern = "^\(corePattern)$"
-        var keys = Regex.capture(path, pattern: ":([^/?#]+)")
+        let pattern = "^\(corePattern)$"
+        let keys = Regex.capture(path, pattern: ":([^/?#]+)")
         return (pattern, keys)
     }
 }
