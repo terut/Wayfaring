@@ -24,8 +24,6 @@ enum TestResource: Resource {
             return "/sasuke/:id/suki"
         case .Sasuke:
             return "/uchiha/:id/no/:mono"
-        default:
-            return "/"
         }
     }
 }
@@ -52,38 +50,38 @@ class WayfaringSpec: QuickSpec {
         }
         it("/naruto/123") {
             let resourceAndParams = Routes.sharedInstance.dispatch("com.example://naruto/123/?aaa=bbb&ccc=111")
-            var actual1 = resourceAndParams.resource! as? TestResource
+            let actual1 = resourceAndParams.resource! as? TestResource
             expect(actual1).to(equal(TestResource.Naruto))
-            var actual2 = resourceAndParams.params!["hokage"] as? String
+            let actual2 = resourceAndParams.params!["hokage"] as? String
             expect(actual2).to(equal("123"))
-            var actual3 = resourceAndParams.params!["aaa"] as? String
+            let actual3 = resourceAndParams.params!["aaa"] as? String
             expect(actual3).to(equal("bbb"))
-            var actual4 = resourceAndParams.params!["ccc"] as? String
+            let actual4 = resourceAndParams.params!["ccc"] as? String
             expect(actual4).to(equal("111"))
         }
         it("/naruto/123/dayo") {
             let resourceAndParams = Routes.sharedInstance.dispatch("com.example://naruto/123/dayo?aaa=bbb&ccc=111")
-            var actual1 = resourceAndParams.resource as? TestResource
+            let actual1 = resourceAndParams.resource as? TestResource
             expect(actual1).to(beNil())
-            var actual2 = resourceAndParams.params?["hokage"] as? String
+            let actual2 = resourceAndParams.params?["hokage"] as? String
             expect(actual2).to(beNil())
         }
         it("/sasuke/dai/suki") {
             let resourceAndParams = Routes.sharedInstance.dispatch("com.example://sasuke/dai/suki?aaa=")
-            var actual1 = resourceAndParams.resource! as? TestResource
+            let actual1 = resourceAndParams.resource! as? TestResource
             expect(actual1).to(equal(TestResource.Sakura))
-            var actual2 = resourceAndParams.params!["id"] as? String
+            let actual2 = resourceAndParams.params!["id"] as? String
             expect(actual2).to(equal("dai"))
-            var actual3 = resourceAndParams.params!["aaa"] as? String
+            let actual3 = resourceAndParams.params!["aaa"] as? String
             expect(actual3).to(equal(""))
         }
         it("/uchiha/123/no/itachi") {
             let resourceAndParams = Routes.sharedInstance.dispatch("com.example://uchiha/123/no/itachi?aaa=bbb&ccc=dd")
-            var actual1 = resourceAndParams.resource! as? TestResource
+            let actual1 = resourceAndParams.resource! as? TestResource
             expect(actual1).to(equal(TestResource.Sasuke))
-            var actual2 = resourceAndParams.params!["id"] as? String
+            let actual2 = resourceAndParams.params!["id"] as? String
             expect(actual2).to(equal("123"))
-            var actual3 = resourceAndParams.params!["mono"] as? String
+            let actual3 = resourceAndParams.params!["mono"] as? String
             expect(actual3).to(equal("itachi"))
         }
     }

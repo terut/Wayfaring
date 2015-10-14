@@ -10,12 +10,11 @@ import Foundation
 class Regex {
     internal static func capture(string: String, pattern: String) -> [String] {
         var captures = [String]()
-        let regex = NSRegularExpression(
+        let regex = try? NSRegularExpression(
             pattern: pattern,
-            options: NSRegularExpressionOptions.allZeros,
-            error: nil)
-        if let matches = regex?.matchesInString(string, options: NSMatchingOptions.allZeros, range: NSRange(location: 0, length: count(string))) {
-            for match in matches as! [NSTextCheckingResult] {
+            options: NSRegularExpressionOptions())
+        if let matches = regex?.matchesInString(string, options: NSMatchingOptions(), range: NSRange(location: 0, length: string.characters.count)) {
+            for match in matches {
                 for var i = 1; i < match.numberOfRanges; ++i {
                     let range = match.rangeAtIndex(i)
                     let cap = (string as NSString).substringWithRange(range)

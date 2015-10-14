@@ -24,7 +24,7 @@ class ViewController: UIViewController {
     func handleURL() {
         let dispatch = Routes.sharedInstance.dispatch(self.targetURL)
         if let resource = dispatch.resource as? AppResource {
-            let vc =  self.storyboard!.instantiateViewControllerWithIdentifier(resource.identifier) as! UIViewController
+            let vc =  self.storyboard!.instantiateViewControllerWithIdentifier(resource.identifier)
             if resource == AppResource.Second {
                 (vc as! SecondViewController).params = dispatch.params!
             }
