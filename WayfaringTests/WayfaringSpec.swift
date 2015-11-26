@@ -56,6 +56,10 @@ class WayfaringSpec: QuickSpec {
             expect(route.keys).to(equal(["id", "mono"]))
         }
         it("/ninja") {
+            let resourceAndParams = Routes.sharedInstance.dispatch("com.example://ninja")
+            expect(resourceAndParams.params).to(beNil())
+        }
+        it("/ninja") {
             let resourceAndParams = Routes.sharedInstance.dispatch("com.example://ninja?aaa=bbb&ccc=111#d=222&ee=fff")
             let actual1 = resourceAndParams.resource! as? TestResource
             expect(actual1).to(equal(TestResource.Ninja))

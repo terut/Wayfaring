@@ -34,7 +34,7 @@ public class Routes {
                     params[key] = val
                 }
                 if params.isEmpty {
-                    return (route.resource, params)
+                    return (route.resource, nil)
                 } else {
                     return (route.resource, params)
                 }
