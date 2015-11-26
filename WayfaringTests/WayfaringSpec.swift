@@ -10,14 +10,16 @@ import Nimble
 import Wayfaring
 
 enum TestResource: Resource {
-    case Naruto, Sakura, Sasuke
+    case Ninja, Naruto, Sakura, Sasuke
 
     static var all: [Resource] {
-        return [Naruto, Sakura, Sasuke]
+        return [Ninja, Naruto, Sakura, Sasuke]
     }
 
     var path: String {
         switch self {
+        case .Ninja:
+            return "/ninja"
         case .Naruto:
             return "/naruto/:hokage"
         case .Sakura:
@@ -33,6 +35,11 @@ class WayfaringSpec: QuickSpec {
         beforeSuite {
             Routes.sharedInstance.bootstrap(TestResource.all)
         }
+        it("/ninja") {
+            let route = Route(resource: TestResource.Ninja)
+            expect(route.pattern).to(equal("^/ninja$"))
+            expect(route.keys).to(equal([]))
+        }
         it("/naruto/:hokage") {
             let route = Route(resource: TestResource.Naruto)
             expect(route.pattern).to(equal("^/naruto/([^/?#]+)$"))
@@ -47,6 +54,19 @@ class WayfaringSpec: QuickSpec {
             let route = Route(resource: TestResource.Sasuke)
             expect(route.pattern).to(equal("^/uchiha/([^/?#]+)/no/([^/?#]+)$"))
             expect(route.keys).to(equal(["id", "mono"]))
+        }
+        it("/ninja") {
+            let resourceAndParams = Routes.sharedInstance.dispatch("com.example://ninja?aaa=bbb&ccc=111#d=222&ee=fff")
+            let actual1 = resourceAndParams.resource! as? TestResource
+            expect(actual1).to(equal(TestResource.Ninja))
+            let actual2 = resourceAndParams.params!["aaa"] as? String
+            expect(actual2).to(equal("bbb"))
+            let actual3 = resourceAndParams.params!["ccc"] as? String
+            expect(actual3).to(equal("111"))
+            let actual4 = resourceAndParams.params!["d"] as? String
+            expect(actual4).to(equal("222"))
+            let actual5 = resourceAndParams.params!["ee"] as? String
+            expect(actual5).to(equal("fff"))
         }
         it("/naruto/123") {
             let resourceAndParams = Routes.sharedInstance.dispatch("com.example://naruto/123/?aaa=bbb&ccc=111#d=222&ee=fff")

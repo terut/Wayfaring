@@ -23,18 +23,20 @@ public class Routes {
         if let url = NSURL(string: urlString) {
             let path = "/\(url.host!)\(url.path!)"
             if let route = searchRoute(path) {
+                var params = [String: AnyObject]()
                 if route.keys.count > 0 {
-                    var params = [String: AnyObject]()
                     var values = Regex.capture(path, pattern: route.pattern)
                     for (i, key) in route.keys.enumerate() {
                         params[key] = values[i]
                     }
-                    for (key, val) in paramsFromQueryStringAndFragment(url) {
-                        params[key] = val
-                    }
+                }
+                for (key, val) in paramsFromQueryStringAndFragment(url) {
+                    params[key] = val
+                }
+                if params.isEmpty {
                     return (route.resource, params)
                 } else {
-                    return (route.resource, nil)
+                    return (route.resource, params)
                 }
             }
         }
