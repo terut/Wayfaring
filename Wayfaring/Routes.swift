@@ -29,7 +29,7 @@ public class Routes {
                     for (i, key) in route.keys.enumerate() {
                         params[key] = values[i]
                     }
-                    for (key, val) in paramsFromQueryString(url) {
+                    for (key, val) in paramsFromQueryStringAndFragment(url) {
                         params[key] = val
                     }
                     return (route.resource, params)
@@ -50,19 +50,29 @@ public class Routes {
         return nil
     }
 
-    private func paramsFromQueryString(url: NSURL) -> [String: AnyObject] {
+    private func paramsFromQueryStringAndFragment(url: NSURL) -> [String: AnyObject] {
         var params: [String: AnyObject] = [:]
         let components = NSURLComponents(URL: url, resolvingAgainstBaseURL: true)
         if let items = components?.queryItems {
             for item in items {
-                let i = item 
-                if let v = i.value {
-                    params[i.name] = v
+                if let v = item.value {
+                    params[item.name] = v
                 } else {
-                    params[i.name] = ""
+                    params[item.name] = ""
                 }
             }
         }
+
+        if let fragmentStr = components?.fragment {
+            let items = fragmentStr.componentsSeparatedByString("&")
+            if items.count > 0 {
+                for item in items {
+                    let keyValue = item.componentsSeparatedByString("=")
+                    params[keyValue[0]] = keyValue[1]
+                }
+            }
+        }
+
         return params
     }
 }

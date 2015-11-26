@@ -49,7 +49,7 @@ class WayfaringSpec: QuickSpec {
             expect(route.keys).to(equal(["id", "mono"]))
         }
         it("/naruto/123") {
-            let resourceAndParams = Routes.sharedInstance.dispatch("com.example://naruto/123/?aaa=bbb&ccc=111")
+            let resourceAndParams = Routes.sharedInstance.dispatch("com.example://naruto/123/?aaa=bbb&ccc=111#d=222&ee=fff")
             let actual1 = resourceAndParams.resource! as? TestResource
             expect(actual1).to(equal(TestResource.Naruto))
             let actual2 = resourceAndParams.params!["hokage"] as? String
@@ -58,6 +58,10 @@ class WayfaringSpec: QuickSpec {
             expect(actual3).to(equal("bbb"))
             let actual4 = resourceAndParams.params!["ccc"] as? String
             expect(actual4).to(equal("111"))
+            let actual5 = resourceAndParams.params!["d"] as? String
+            expect(actual5).to(equal("222"))
+            let actual6 = resourceAndParams.params!["ee"] as? String
+            expect(actual6).to(equal("fff"))
         }
         it("/naruto/123/dayo") {
             let resourceAndParams = Routes.sharedInstance.dispatch("com.example://naruto/123/dayo?aaa=bbb&ccc=111")
