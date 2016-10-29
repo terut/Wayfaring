@@ -15,7 +15,7 @@ class Regex {
             options: NSRegularExpressionOptions())
         if let matches = regex?.matchesInString(string, options: NSMatchingOptions(), range: NSRange(location: 0, length: string.characters.count)) {
             for match in matches {
-                for var i = 1; i < match.numberOfRanges; ++i {
+                for i in (1 ..< match.numberOfRanges) {
                     let range = match.rangeAtIndex(i)
                     let cap = (string as NSString).substringWithRange(range)
                     captures.append(cap)

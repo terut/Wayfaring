@@ -20,7 +20,7 @@ public struct Route {
     }
 
     internal func isMatch(path: String) -> Bool {
-        if let _ = path.rangeOfString(self.pattern, options: .RegularExpressionSearch) {
+        if let _ = path.rangeOfString(self.pattern, options: NSStringCompareOptions.RegularExpressionSearch) {
             return true
         }
         return false
