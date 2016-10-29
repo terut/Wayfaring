@@ -24,8 +24,8 @@ class ViewController: UIViewController {
     func handleURL() {
         let dispatch = Routes.sharedInstance.dispatch(self.targetURL)
         if let resource = dispatch.resource as? AppResource {
-            let vc =  self.storyboard!.instantiateViewControllerWithIdentifier(resource.identifier)
-            if resource == AppResource.Second {
+            let vc =  self.storyboard!.instantiateViewController(withIdentifier: resource.identifier)
+            if resource == AppResource.second {
                 (vc as! SecondViewController).params = dispatch.params!
             }
             self.navigationController?.pushViewController(vc, animated: true)

@@ -19,15 +19,15 @@ public struct Route {
         self.keys = patternAndKeys.keys
     }
 
-    internal func isMatch(path: String) -> Bool {
-        if let _ = path.rangeOfString(self.pattern, options: .RegularExpressionSearch) {
+    internal func isMatch(_ path: String) -> Bool {
+        if let _ = path.range(of: self.pattern, options: .regularExpression) {
             return true
         }
         return false
     }
 
-    private func compile(path: String) -> (pattern: String, keys: [String]) {
-        let corePattern = path.stringByReplacingOccurrencesOfString(":[^/?#]+", withString: "([^/?#]+)", options: NSStringCompareOptions.RegularExpressionSearch, range: nil)
+    fileprivate func compile(_ path: String) -> (pattern: String, keys: [String]) {
+        let corePattern = path.replacingOccurrences(of: ":[^/?#]+", with: "([^/?#]+)", options: NSString.CompareOptions.regularExpression, range: nil)
         let pattern = "^\(corePattern)$"
         let keys = Regex.capture(path, pattern: ":([^/?#]+)")
         return (pattern, keys)
