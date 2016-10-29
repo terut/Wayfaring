@@ -7,27 +7,27 @@
 
 import Foundation
 
-public class Routes {
-    public static let sharedInstance = Routes()
-    private var routes = [Route]()
+open class Routes {
+    open static let sharedInstance = Routes()
+    fileprivate var routes = [Route]()
 
-    private init() {}
+    fileprivate init() {}
 
-    public func bootstrap(resources: [Resource]) {
+    open func bootstrap(_ resources: [Resource]) {
         for res in resources {
            routes.append(Route(resource: res))
         }
     }
 
-    public func dispatch(urlString: String) -> (resource: Resource?, params: [String: AnyObject]?) {
-        if let url = NSURL(string: urlString) {
-            let path = "/\(url.host!)\(url.path!)"
+    open func dispatch(_ urlString: String) -> (resource: Resource?, params: [String: AnyObject]?) {
+        if let url = URL(string: urlString) {
+            let path = "/\(url.host!)\(url.path)"
             if let route = searchRoute(path) {
                 var params = [String: AnyObject]()
                 if route.keys.count > 0 {
                     var values = Regex.capture(path, pattern: route.pattern)
-                    for (i, key) in route.keys.enumerate() {
-                        params[key] = values[i]
+                    for (i, key) in route.keys.enumerated() {
+                        params[key] = values[i] as AnyObject?
                     }
                 }
                 for (key, val) in paramsFromQueryStringAndFragment(url) {
@@ -43,7 +43,7 @@ public class Routes {
         return (nil, nil)
     }
 
-    private func searchRoute(path: String) -> Route? {
+    fileprivate func searchRoute(_ path: String) -> Route? {
         for route in self.routes {
             if route.isMatch(path) {
                 return route
@@ -52,25 +52,25 @@ public class Routes {
         return nil
     }
 
-    private func paramsFromQueryStringAndFragment(url: NSURL) -> [String: AnyObject] {
+    fileprivate func paramsFromQueryStringAndFragment(_ url: URL) -> [String: AnyObject] {
         var params: [String: AnyObject] = [:]
-        let components = NSURLComponents(URL: url, resolvingAgainstBaseURL: true)
+        let components = URLComponents(url: url, resolvingAgainstBaseURL: true)
         if let items = components?.queryItems {
             for item in items {
                 if let v = item.value {
-                    params[item.name] = v
+                    params[item.name] = v as AnyObject?
                 } else {
-                    params[item.name] = ""
+                    params[item.name] = "" as AnyObject?
                 }
             }
         }
 
         if let fragmentStr = components?.fragment {
-            let items = fragmentStr.componentsSeparatedByString("&")
+            let items = fragmentStr.components(separatedBy: "&")
             if items.count > 0 {
                 for item in items {
-                    let keyValue = item.componentsSeparatedByString("=")
-                    params[keyValue[0]] = keyValue[1]
+                    let keyValue = item.components(separatedBy: "=")
+                    params[keyValue[0]] = keyValue[1] as AnyObject?
                 }
             }
         }
