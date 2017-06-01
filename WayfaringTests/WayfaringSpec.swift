@@ -72,6 +72,19 @@ class WayfaringSpec: QuickSpec {
             let actual5 = resourceAndParams.params!["ee"] as? String
             expect(actual5).to(equal("fff"))
         }
+        it("/ninja with https") {
+            let resourceAndParams = Routes.sharedInstance.dispatch("https://exmaple.com/ninja?aaa=bbb&ccc=111#d=222&ee=fff")
+            let actual1 = resourceAndParams.resource! as? TestResource
+            expect(actual1).to(equal(TestResource.ninja))
+            let actual2 = resourceAndParams.params!["aaa"] as? String
+            expect(actual2).to(equal("bbb"))
+            let actual3 = resourceAndParams.params!["ccc"] as? String
+            expect(actual3).to(equal("111"))
+            let actual4 = resourceAndParams.params!["d"] as? String
+            expect(actual4).to(equal("222"))
+            let actual5 = resourceAndParams.params!["ee"] as? String
+            expect(actual5).to(equal("fff"))
+        }
         it("/naruto/123") {
             let resourceAndParams = Routes.sharedInstance.dispatch("com.example://naruto/123/?aaa=bbb&ccc=111#d=222&ee=fff")
             let actual1 = resourceAndParams.resource! as? TestResource

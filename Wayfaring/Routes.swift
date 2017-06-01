@@ -21,7 +21,13 @@ open class Routes {
 
     open func dispatch(_ urlString: String) -> (resource: Resource?, params: [String: AnyObject]?) {
         if let url = URL(string: urlString) {
-            let path = "/\(url.host!)\(url.path)"
+            let path: String
+            if url.scheme == "http" || url.scheme == "https" {
+                path = "\(url.path)"
+            } else {
+                path = "/\(url.host!)\(url.path)"
+            }
+
             if let route = searchRoute(path) {
                 var params = [String: AnyObject]()
                 if route.keys.count > 0 {
